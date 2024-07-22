@@ -3,10 +3,12 @@ version: '3'
 services:
   matrix:
     image: girlbossceo/conduwuit:latest
+    volumes:
+      - ./services/matrix/db:/var/lib/conduwuit/
     environment:
       CONDUWUIT_SERVER_NAME: "mrparker.dev"
       CONDUWUIT_DATABASE_BACKEND: "rocksdb"
       CONDUWUIT_ALLOW_REGISTRATION: false
   cloudflared:
     image: cloudflare/cloudflared:latest
-    TUNNEL_TOKEN: <fill in later>
+    TUNNEL_TOKEN: <fill in later get rekt>
